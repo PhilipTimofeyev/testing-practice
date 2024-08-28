@@ -1,6 +1,7 @@
 import { capitalize } from "./capitalize";
 import { reverseString } from "./reverseString";
 import { calculator } from "./calculator";
+import { caesarCipher } from "./caesarCipher";
 
 test('capitalizes first letter of word', () => {
 	expect(capitalize("dog")).toBe("Dog");
@@ -25,3 +26,22 @@ test('multiply two numbers', () => {
 test('divide two numbers', () => {
 	expect(calculator.div(18, 2)).toBe(9)
 })
+
+test('wrap shift', () => {
+	expect(caesarCipher('xyz', 3)).toBe("abc")
+})
+
+test('preservation', () => {
+	expect(caesarCipher('HeLLo', 3)).toBe("KhOOr")
+})
+
+test('special characters', () => {
+	expect(caesarCipher('Hello, World!', 3)).toBe("Khoor, Zruog!")
+})
+
+
+
+
+
+
+
